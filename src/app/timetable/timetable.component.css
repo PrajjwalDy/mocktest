@@ -1,0 +1,243 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 199, 162);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 700px /* Full viewport height */
+}
+
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.header h1 {
+  font-size: 24px;
+  color:rgb(0, 0, 0);
+  padding-left: 50px;
+}
+
+.logo{
+  width: 180px;
+  height: 60px;
+}
+
+.exam{
+  color:#d21e48;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.tab {
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  background-color: #f38d19;
+  font-weight: bold;
+  color: white;
+}
+
+.timetable-wrapper {
+  flex: 1;
+  overflow-y: auto; /* Allow scrolling for timetable content */
+}
+
+.timetable-wrapper::-webkit-scrollbar {
+  width: 6px; /* Width of the vertical scrollbar */
+  height: 6px; /* Height of the horizontal scrollbar */
+}
+
+.timetable-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+  border-radius: 10px;
+}
+
+.timetable-wrapper::-webkit-scrollbar-thumb {
+  background: #dcd6ff; /* Color of the scrollbar thumb */
+  border-radius: 10px;
+}
+
+.timetable-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #bcb2ff; /* Color when hovered */
+}
+
+/* For Firefox */
+.timetable-wrapper {
+  scrollbar-width: thin; /* Reduce the width of the scrollbar */
+  scrollbar-color: #dcd6ff #f1f1f1; /* Thumb color | Track color */
+}
+
+.timetable {
+  margin-top: 20px;
+}
+
+.test-row {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  margin: 10px 0;
+  border-radius: 15px;
+}
+
+
+.test-info.enhanced {
+  height: 180px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #FDCA93;
+  border-radius: 15px 0 0 15px;
+  text-align: center;
+}
+
+.testTopic{
+  margin: 5px;
+}
+
+
+.test-date {
+  width: 70px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ .test-info.enhanced {
+  border-left: 10px solid #e2e1e1;
+  background-color: #ebebeb;
+}
+
+
+.test-centers {
+  flex: 3;
+  display: flex;
+  gap: 20px;
+  margin-left: 20px;
+}
+
+.center {
+  background-color: #fafafa;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px;
+  border: 1px solid #b1b1b1;
+  text-align: center;
+}
+
+.center.online {
+  background-color: #e0f0d4;
+  color: green;
+}
+
+.book-btn {
+  display: inline-block; /* Ensure the width adapts to content */
+  background-color: #f38d19;
+  padding: 5px 15px;
+  color: #fefefe;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center; /* Center align text inside button */
+  min-width: 80px; /* Optional: Set a minimum width */
+}
+
+
+.book-btn:hover {
+  background-color: #f2985d;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    height: auto; /* Allow content to dictate height */
+  }
+
+  .header h1 {
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  .tabs {
+    gap: 5px;
+    flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
+  }
+
+  .tab {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .test-row {
+    height: auto; /* Let content dictate row height */
+    flex-direction: column; /* Stack content vertically */
+    padding: 10px;
+  }
+
+  .test-info.enhanced {
+    height: auto;
+    flex: none; /* Adjust flex to prevent stretching */
+    margin-bottom: 10px;
+  }
+
+  .test-centers {
+    flex-direction: column; /* Stack centers vertically */
+    margin-left: 0;
+    gap: 10px;
+  }
+
+  .center {
+    min-width: auto; /* Allow flexible widths */
+  }
+}

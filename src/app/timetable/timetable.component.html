@@ -1,0 +1,47 @@
+
+<div class="header">
+  <h1>11+ Mock Tests 2025</h1>
+  <div class="exam">
+    <h2>Exam Hall / Face-2-Face & Online</h2>
+  </div>
+  
+  <h2>  CSSE | FSCE | GL | SET </h2>
+  <img src="logo2.png" alt="Logo" class="logo">
+</div>
+
+<div class="container">
+  <div class="tabs">
+    <div 
+      *ngFor="let month of months"
+      class="tab" 
+      [ngClass]="{active: selectedMonth === month}"
+      (click)="selectMonth(month)">
+      {{ month }}
+    </div>
+  </div>
+
+  <div class="timetable-wrapper">
+    <div class="timetable">
+      <div 
+        *ngFor="let test of timetable[selectedMonth]"
+        class="test-row">
+        <div class="test-info enhanced">
+          <div class="test-date">{{ test.date }}</div>
+          <h3 class="testName">{{ test.name }}</h3>
+          <p class="testTopic">{{ test.testtype }}</p>
+          <p class="testTopic">{{ test.description }}</p>
+        </div>
+        <div class="test-centers">
+          <div 
+            *ngFor="let center of test.centers"
+            class="center"
+            [ngClass]="{'online': center.name === 'Online'}">
+            <p>{{ center.name }}</p>
+            <p>{{ center.time }}</p>
+            <a class="book-btn" [href]="center.url" target="_blank">Book</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
